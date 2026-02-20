@@ -7,6 +7,8 @@
   --orange-500: #FC8A68;
   --orange-600: #F48664;
 
+  --blue-800: #0E122D;
+
   --white-100: #FFFFFF;
   --white-500: #FBE3D7;
 
@@ -16,6 +18,7 @@
   --primary-color-nor: var(--purple-500);
   --primary-color-dark: var(--purple-800);
   --secondary-color-light: var(--white-500);
+  --tertiary-color-dark: var(--blue-800);
   --accent-color-hover: var(--orange-500);
   --accent-color-active: var(--orange-300);
   --border-color-dark: var(--black-900);
@@ -33,7 +36,8 @@
 html,
 body {
   font-family: 'Josefin Sans', sans-serif, serif;
-  background-color: var(--primary-color-light);
+  background-color: var(--tertiary-color-dark);
+  overflow-x: hidden;
 }
 
 html:has(#nav-toggle:checked),
@@ -183,6 +187,13 @@ main {
 
 .hero-section {
   block-size: 100svh;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  z-index: 200;
+  bottom:0;
 }
 
 .welcome-message {
@@ -190,13 +201,15 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 500;
 }
 
 .hero-section h2 {
-  color: var(--primary-color-dark);
+  color: var(--secondary-color-light);
   font-size: 5rem;
   text-align: center;
   font-family: 'Limelight', sans-serif, serif;
+  z-index: inherit;
 }
 
 .project-section {
